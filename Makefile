@@ -10,6 +10,9 @@ all: $(SOURCES) $(TARGET)
 $(TARGET): $(OBJS)
 	$(CXX) $(LFLAGS) $(OBJS) -o $(TARGET)
 
+run: $(TARGET)
+	./$(TARGET) -m -b "0000111100001111"
+
 purge: clean
 	rm -f $(TARGET)
 

@@ -1,6 +1,7 @@
 CXX=g++
 TARGET=qam16
 SOURCES=main.cpp
+ZIP=241690.zip
 
 LFLAGS=-std=c++17
 
@@ -20,3 +21,7 @@ purge: clean
 
 clean:
 	rm -f *.o
+
+zip:
+	mv BMS___projekt.pdf docs.pdf
+	zip $(ZIP) $(SOURCES) Makefile docs.pdf

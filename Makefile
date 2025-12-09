@@ -2,6 +2,8 @@ CXX=g++
 TARGET=qam16
 SOURCES=main.cpp
 
+LFLAGS=-std=c++17
+
 OBJSC=$(SOURCES:.c=.o)
 OBJS=$(OBJSC:.cpp=.o)
 

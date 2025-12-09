@@ -13,7 +13,6 @@ const double factor = 1/sqrt(10);
 map<string, int> grey = { {"00", -3}, {"01", -1}, {"10", 3}, {"11", 1} };
 map<int, string> grey_r = { {-3, "00"}, {-1, "01"}, {3, "10"}, {1, "11"} };
 
-
 template <typename Out>
 void split(const std::string &s, char delim, Out result) {
     std::istringstream iss(s);
@@ -74,8 +73,9 @@ int main(int argc, char* argv[]) {
         else if (strcmp(argv[2], "-f") == 0) {
             ifstream f(argv[3]);
             string number;
-            getline(f, number); //TODO multiline support?
-            modulate(number);
+            while(getline(f, number)) {
+                modulate(number);
+            }
         } 
     } else if (strcmp(argv[1], "-d") == 0) {
         if (strcmp(argv[2], "-f") == 0) {
